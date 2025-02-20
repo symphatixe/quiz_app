@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class QuizQuestion extends StatelessWidget {
+  const QuizQuestion({super.key});
+
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    //hello there :D, testing commit in submodule
   }
 
 }
