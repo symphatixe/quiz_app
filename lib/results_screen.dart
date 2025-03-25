@@ -3,9 +3,9 @@ import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/question_summary.dart';
 
 class ResultsScreen extends StatelessWidget{
-  const ResultsScreen({super.key, required this.chosenAnswers});
-
+  const ResultsScreen({super.key, required this.chosenAnswers, required this.restartScreen});
   final List<String> chosenAnswers;
+  final void Function() restartScreen;
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -42,8 +42,23 @@ class ResultsScreen extends StatelessWidget{
         child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children:  [
-            Text(
-              'You answered $numCorrectQuestions out of $numTotalQuestions questions Correctly'
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.grey,
+                border: Border.all(
+                  color: Colors.black,
+                  width: 2.5,
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Text(
+                'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+                textAlign: TextAlign.center,
+              ),
             ),
 
             const SizedBox(
@@ -58,10 +73,27 @@ class ResultsScreen extends StatelessWidget{
               height:30,
             ),
 
-            TextButton(
-              onPressed: (){},
-              child: const Text('Restart Quiz'),
-            )
+            OutlinedButton.icon(
+              icon: const Icon(
+                Icons.arrow_circle_right_outlined,
+                size: 40,
+                color: Colors.white,
+              ),
+              onPressed: restartScreen,
+              style: OutlinedButton.styleFrom(
+                foregroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(
+                  vertical: 20,
+                  horizontal: 20,
+                ),
+              ),
+              label: Text(
+                "Restart Quiz",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ),
           ],
         ),
       ),

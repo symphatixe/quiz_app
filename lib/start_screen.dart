@@ -22,7 +22,7 @@ class StartScreen extends StatelessWidget {
           ),
 
           Text(
-            "Learn Flutter the right way",
+            "Ocean Creature Quiz!!!",
             style: TextStyle(
               color: Colors.white,
               fontSize: 24,
@@ -32,6 +32,7 @@ class StartScreen extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
+
           OutlinedButton.icon(
             icon: const Icon(
               Icons.arrow_circle_right_outlined,
