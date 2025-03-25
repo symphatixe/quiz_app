@@ -20,7 +20,7 @@ class QuestionsSummary extends StatelessWidget{
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                     decoration: BoxDecoration(
                       color: isCorrect ? Colors.green : Colors.red,
-                      borderRadius: BorderRadius.circular(20), // 🟢 makes it pill-like
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
                       ((data['question_index'] as int) +1).toString(),
